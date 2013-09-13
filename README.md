@@ -1,6 +1,6 @@
 # JpushRubySdk
 
-TODO: Write a gem description
+目前仅仅实现了 ** 推送全功能接口 **
 
 ## Installation
 
@@ -18,7 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+* 推送全功能接口
+
+```ruby
+
+jpush_client = JpushRubySdk::Client.new(app_key, master_secret)
+
+receiver = Hash[:receiver_type => "4", :receiver_value => ""]
+
+msg_content = MultiJson.dump(Hash[:n_content=> "test gogograd haha"])
+msg = Hash[:msg_type => "1", :msg_content => msg_content, :platform => "ios"]
+
+jpush_client.pushNotification("3322",receiver, msg, {})
+
+
+```
 
 ## Contributing
 
