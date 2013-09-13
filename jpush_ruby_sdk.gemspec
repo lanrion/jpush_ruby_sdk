@@ -6,11 +6,11 @@ require 'jpush_ruby_sdk/version'
 Gem::Specification.new do |spec|
   spec.name          = "jpush_ruby_sdk"
   spec.version       = JpushRubySdk::VERSION
-  spec.authors       = ["DylanDeng"]
+  spec.authors       = ["Dylan Deng"]
   spec.email         = ["dylan@beansmile.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = "provide a ruby api gem for jpush https://www.jpush.cn"
+  spec.summary       = "a api gem for jpush"
+  spec.homepage      = "https://github.com/lanrion/jpush_ruby_sdk"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
