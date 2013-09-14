@@ -24,12 +24,12 @@ Or install it yourself as:
 
 jpush_client = JpushRubySdk::Client.new(app_key, master_secret)
 
-receiver = Hash[:receiver_type => "4", :receiver_value => ""]
+receiver = {:receiver_type => "4", :receiver_value => ""}
 
-msg_content = MultiJson.dump(Hash[:n_content=> "test gogograd haha"])
-msg = Hash[:msg_type => "1", :msg_content => msg_content, :platform => "ios"]
+msg_content = MultiJson.dump({:n_content => "test jpush message haha"})
+msg = {:msg_type => "1", :msg_content => msg_content, :platform => "ios"}
 
-jpush_client.pushNotification("3322",receiver, msg, {})
+jpush_client.pushNotification("3322", receiver, msg, {})
 
 
 ```
