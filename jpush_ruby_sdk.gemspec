@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "jpush_ruby_sdk"
   spec.version       = JpushRubySdk::VERSION
   spec.authors       = ["Dylan Deng"]
-  spec.email         = ["dylan@beansmile.com"]
+  spec.email         = ["lanrion_dht@163.com"]
   spec.description   = "provide a ruby api gem for jpush https://www.jpush.cn"
   spec.summary       = "a api gem for jpush"
   spec.homepage      = "https://github.com/lanrion/jpush_ruby_sdk"
