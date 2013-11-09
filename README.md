@@ -29,7 +29,7 @@ receiver = {:receiver_type => "4", :receiver_value => ""}
 msg_content = MultiJson.dump({:n_content => "test jpush message haha"})
 msg = {:msg_type => "1", :msg_content => msg_content, :platform => "ios"}
 
-jpush_client.pushNotification("3322", receiver, msg, {})
+jpush_client.push_notification("3322", receiver, msg, {})
 
 
 ```

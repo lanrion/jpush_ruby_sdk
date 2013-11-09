@@ -17,7 +17,7 @@ module JpushRubySdk
     # url: http://docs.jpush.cn/display/dev/Send+API+v2#SendAPIv2-推送全功能接口
     # api:  sendmsg/v2/sendmsg
     # options: send_description, time_to_live, override_msg_id
-    def pushNotification(sendno, receiver, msg, https=false, options={})
+    def push_notification(sendno, receiver, msg, https=false, options={})
       # default: HTTP
       api_url = https == true ? HTTPS_JPUSH_API_URL_NOTIFICATION : HTTP_JPUSH_API_URL
 
@@ -26,7 +26,7 @@ module JpushRubySdk
       post_body[:sendno]  = sendno
       post_body[:receiver_type]     = receiver[:receiver_type]
       post_body[:receiver_value]    = receiver[:receiver_value]
-      post_body[:verification_code] = buildVerifcation(sendno,
+      post_body[:verification_code] = build_verifcation(sendno,
                                                        receiver[:receiver_type],
                                                        receiver[:receiver_value],
                                                        master_secret)
@@ -35,13 +35,13 @@ module JpushRubySdk
       post_body[:platform]    = msg[:platform]
       post_body.merge!(options)
 
-      postJPushApi(api_url, post_body)
+      post_jpush_api(api_url, post_body)
     end
 
     private
 
       # MD5 secret
-      def buildVerifcation(sendno, receiver_type, receiver_value, master_secret)
+      def build_verifcation(sendno, receiver_type, receiver_value, master_secret)
         verifcation = "#{sendno}#{receiver_type}#{receiver_value}#{master_secret}"
         Digest::MD5.hexdigest(verifcation)
       end
@@ -57,7 +57,7 @@ module JpushRubySdk
       end
 
       # post jpush api
-      def postJPushApi(api_url,post_body)
+      def post_jpush_api(api_url,post_body)
         response_msg = RestClient.post(
           api_url,
           post_body,
