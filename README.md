@@ -1,6 +1,8 @@
 # JpushRubySdk
 
-目前仅仅实现了 **推送全功能接口**, 注意：此gem正在完善中，欢迎发PR。
+目前仅仅实现了 **推送全功能接口**。
+
+此gem不再维护，请参考官方gem：https://github.com/jpush/jpush-api-ruby-client
 
 ## Installation
 
